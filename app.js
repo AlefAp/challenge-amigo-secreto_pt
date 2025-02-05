@@ -29,3 +29,17 @@ function atualizarLista() {
         arrayAmigos.appendChild(li)
     }
 }
+
+function sortearAmigo() {
+    if (listaAmigos.length === 0) {
+        alert ("Não tem nenhum amigo para sortear!")
+        return
+    }
+
+    let amigoSecreto = Math.floor(Math.random() * listaAmigos.length)
+
+    let amigoSorteado = listaAmigos[amigoSecreto]
+
+    let resultado = document.getElementById("resultado")
+    resultado.innerHTML = "Amigo sorteado: <strong>" + amigoSecreto + "</strong>"
+}
