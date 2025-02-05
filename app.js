@@ -1,4 +1,4 @@
-let listaAmigos = []
+let amigos = []
 
 function adicionarAmigo() {
     let inputAmigo = document.getElementById("amigo")
@@ -9,12 +9,12 @@ function adicionarAmigo() {
         return
     }
 
-    if (listaAmigos.includes(nomeAmigo)) {
+    if (amigos.includes(nomeAmigo)) {
         alert("Este nome já foi adicionado")
         return
     }
 
-    listaAmigos.push(nomeAmigo)
+    amigos.push(nomeAmigo)
     inputAmigo.value = ""
     atualizarLista()
 }
@@ -23,23 +23,23 @@ function atualizarLista() {
     let arrayAmigos = document.getElementById("listaAmigos")
     arrayAmigos.innerHTML = ""
 
-    for (let i = 0; i < listaAmigos.length; i++) {
-        let li = document.createAttribute("li")
-        li.textContent = listaAmigos[i]
+    for (let i = 0; i < amigos.length; i++) {
+        let li = document.createElement("li")
+        li.textContent = amigos[i]
         arrayAmigos.appendChild(li)
     }
 }
 
 function sortearAmigo() {
-    if (listaAmigos.length === 0) {
+    if (amigos.length === 0) {
         alert("Não tem nenhum amigo para sortear!")
         return
     }
 
-    let amigoSecreto = Math.floor(Math.random() * listaAmigos.length)
+    let amigoSecreto = Math.floor(Math.random() * amigos.length)
 
-    let amigoSorteado = listaAmigos[amigoSecreto]
+    let amigoSorteado = amigos[amigoSecreto]
 
     let resultado = document.getElementById("resultado")
-    resultado.innerHTML = "Amigo sorteado: <strong>" + amigoSecreto + "</strong>"
+    resultado.innerHTML = "Amigo sorteado: <strong>" + amigoSorteado + "</strong>"
 }
