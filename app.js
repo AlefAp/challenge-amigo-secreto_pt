@@ -5,12 +5,12 @@ function adicionarAmigo() {
     let nomeAmigo = inputAmigo.value.trim()
 
     if (nomeAmigo === "") {
-        alert ("Por favor, digite um nome.")
+        alert("Por favor, digite um nome.")
         return
     }
 
     if (listaAmigos.includes(nomeAmigo)) {
-        alert ("Este nome já foi adicionado")
+        alert("Este nome já foi adicionado")
         return
     }
 
@@ -23,7 +23,7 @@ function atualizarLista() {
     let arrayAmigos = document.getElementById("listaAmigos")
     arrayAmigos.innerHTML = ""
 
-    for (let i = 0; i <listaAmigos.length; i++) {
+    for (let i = 0; i < listaAmigos.length; i++) {
         let li = document.createAttribute("li")
         li.textContent = listaAmigos[i]
         arrayAmigos.appendChild(li)
@@ -32,7 +32,7 @@ function atualizarLista() {
 
 function sortearAmigo() {
     if (listaAmigos.length === 0) {
-        alert ("Não tem nenhum amigo para sortear!")
+        alert("Não tem nenhum amigo para sortear!")
         return
     }
 
